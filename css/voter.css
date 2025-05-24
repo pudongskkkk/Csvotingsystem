@@ -1,0 +1,157 @@
+/* Voters Table Styles */
+.table-responsive {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.sort-icon {
+    font-size: 0.8rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+/* Custom outline button styling */
+#addVoterBtn {
+    border-width: 2px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#addVoterBtn:hover {
+    background-color: #0d6efd; /* Bootstrap primary color */
+    color: white;
+    transform: translateY(-1px);
+}
+
+#addVoterBtn i {
+    transition: transform 0.2s ease;
+}
+
+#addVoterBtn:hover i {
+    transform: scale(1.1);
+}
+
+
+
+.sort-icon:hover {
+    opacity: 1;
+}
+
+.sortable {
+    cursor: pointer;
+}
+
+.sortable.active .sort-icon {
+    opacity: 1;
+    color: #0d6efd; /* Bootstrap primary color */
+}
+
+.sort-asc .sort-icon::before {
+    content: "\f148"; /* bi-arrow-up */
+}
+
+.sort-desc .sort-icon::before {
+    content: "\f149"; /* bi-arrow-down */
+}
+
+#searchSuggestions {
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    background: #fff; /* Add background color */
+    border: 1px solid #dee2e6; /* Add border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Add shadow for depth */
+    margin-top: 3.25rem; /* Small gap from input */
+}
+
+/* Optional: Style scrollbar for better UX */
+#searchSuggestions::-webkit-scrollbar {
+    width: 8px;
+}
+#searchSuggestions::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+#searchSuggestions::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+#searchSuggestions::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+/* Badge styling */
+.badge {
+    font-family: monospace;
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+    letter-spacing: 0.5px;
+}
+
+/* Action buttons */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    min-width: 32px;
+}
+
+.btn-sm i {
+    font-size: 0.875rem;
+    vertical-align: middle;
+}
+
+/* Confirmation Modal Styles */
+#confirmationModal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+#confirmationModal .modal-header {
+    border-bottom: none;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+#confirmationModal .modal-footer {
+    border-radius: 0 0 12px 12px;
+}
+
+#confirmationModal .btn-danger {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#confirmationModal .btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(204, 0, 0, 0.3);
+}
+
+#confirmationModal .btn-outline-secondary {
+    transition: all 0.3s ease;
+}
+
+#confirmationModal .btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+}

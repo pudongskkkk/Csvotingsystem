@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Candidates - Voting System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/candidates.css">
+    <script src="../js/candidate.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: #6A0DAD;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../images/cslogo.png" alt="Voting Logo" style="height: 40px;">
+            </a>  
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="manage-candidates.html">Manage Candidates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manage-voters.html">Manage Voters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="voter-registration.html">Voter Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="student_data.html">Student Records</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="election-results.html">Election Results</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <span class="navbar-text text-white me-3">Admin User</span>
+                    <a href="admin_login.html"><button class="btn btn-outline-light">Logout</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5" style="max-width: 1500px;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Manage Candidates</h2>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCandidateModal">
+                <i class="bi bi-plus-lg"></i> Add Candidate
+            </button>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 80px">Photo</th>
+                                <th>Candidate Name</th>
+                                <th>Party List</th>
+                                <th>Position</th>
+                                <th style="width: 120px">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Candidate 1 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addCandidateModal" tabindex="-1" aria-labelledby="addCandidateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title" id="addCandidateModalLabel">
+                        <i class="bi bi-person-plus-fill text-primary me-2"></i>
+                        Add New Candidate
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form id="candidateForm">
+                    <!-- Hidden input for Candidate ID (used for editing) -->
+                    <input type="hidden" id="candidateId" name="id">
+
+                    <!-- Photo Upload -->
+                    <div class="text-center mb-4">
+                        <img id="photoPreview" src="" alt="Candidate Photo" class="photo-preview">
+                        <label for="candidatePhoto" class="photo-upload btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-camera-fill me-1"></i> Upload Photo
+                        </label>
+                        <input type="file" id="candidatePhoto" accept="image/*" class="d-none">
+                    </div>
+                    
+                    <!-- Candidate Name -->
+                    <div class="mb-3">
+                        <label for="candidateName" class="form-label">
+                            <i class="bi bi-person-vcard form-icon"></i>Full Name
+                            <small class="text-muted fst-italic ms-2">First Name, Middle Name, Last Name</small>
+                        </label>
+                        <input type="text" class="form-control" id="candidateName" placeholder="Enter candidate's full name" required>
+                    </div>
+                    <!-- Student ID -->
+                    <div class="mb-3">
+                        <label for="studentId" class="form-label">
+                            <i class="bi bi-card-text form-icon"></i>Student ID
+                        </label>
+                        <input type="text" class="form-control" id="studentId" placeholder="Enter student ID" required>
+                    </div>
+                    
+                    <!-- Party List -->
+                    <div class="mb-3">
+                        <label for="partyList" class="form-label">
+                            <i class="bi bi-flag form-icon"></i>Party List
+                        </label>
+                        <input type="text" class="form-control" id="partyList" placeholder="Enter party or organization" required>
+                    </div>
+                    <!-- Position Dropdown -->
+                    <div class="mb-3">
+                        <label for="candidatePosition" class="form-label">
+                            <i class="bi bi-briefcase form-icon"></i>Position
+                        </label>
+                        <select class="form-select" id="candidatePosition" required>
+                            <option value="" selected disabled>Select position</option>
+                            <option value="President">President</option>
+                            <option value="Vice President">Vice President</option>
+                            <option value="Secretary">Secretary</option>
+                            <option value="Sub Secretary">Sub Secretary</option>
+                            <option value="Treasurer">Treasurer</option>
+                            <option value="Sub Treasurer">Sub Treasurer</option>
+                            <option value="Auditors">Auditors</option>
+                            <option value="Pro's">Pro's</option>
+                            <option value="Business Managers">Business Managers</option>
+                            <option value="Adonis">Adonis</option>
+                            <option value="Muse">Muse</option>
+                            <option value="First Year Representative">First Year Representative</option>
+                            <option value="Second Year Representative">Second Year Representative</option>
+                            <option value="Third Year Representative">Third Year Representative</option>
+                            <option value="Fourth Year Representative">Fourth Year Representative</option>
+                        </select>
+                    </div>
+                </form>      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-1"></i>Cancel
+                    </button>
+                    <button type="submit" form="candidateForm" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>Save Candidate
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</body>
+</html>

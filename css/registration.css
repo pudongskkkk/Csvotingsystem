@@ -1,0 +1,42 @@
+.registration-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.action-buttons .btn {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.accept-btn {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.accept-btn:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.decline-btn {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.decline-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+/* Table header icon styling */
+th i {
+    font-size: 0.9rem;
+    vertical-align: middle;
+    opacity: 0.8;
+}

@@ -1,0 +1,123 @@
+.action-buttons .btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.85rem;
+    }
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+}
+@media (max-width: 576px) {
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    .action-buttons .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Table Container Styles */
+.table-container {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Table Styling */
+.table-container table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Header Styles */
+.table-container thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table-container thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem 0.75rem;
+    border-bottom: 2px solid #dee2e6;
+    white-space: nowrap;
+}
+
+/* Body Container */
+.table-body-container {
+    max-height: 500px;
+    overflow-y: auto;
+    display: block;
+}
+
+/* Body Cell Styles */
+.table-container tbody td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.75rem;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Hover Effect */
+.table-container tbody tr:hover td {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Alternating Row Colors */
+.table-container tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+/* Scrollbar Styling */
+.table-body-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-body-container::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.table-body-container::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+    border: 2px solid #f8f9fa;
+}
+
+.table-body-container::-webkit-scrollbar-thumb:hover {
+    background-color: #6c757d;
+}
+
+/* Icon Alignment */
+.table-container th i {
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+/* Empty State */
+.table-container .empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Error State */
+.table-container .error-state {
+    padding: 2rem;
+    text-align: center;
+    color: #dc3545;
+}
+
